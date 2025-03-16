@@ -6,7 +6,7 @@ FFLAGS = -Wall -O -g -ffixed-line-length-100
 TARGET = relax
 
 # Source files
-SRCS = relax.f choices.f setup.f jacobi.f gauss_seidel.f
+SRCS = relax2.f choices.f setup.f jacobi2.f gauss_seidel2.f plot.f
 
 # Object files (generated from source files)
 OBJS = $(SRCS:.f=.o)

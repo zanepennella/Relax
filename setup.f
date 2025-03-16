@@ -36,9 +36,9 @@ c
       end do ! temp_j
       
       if (overrelaxed) then
-      	omega = 1.2 ! TEMPORARY
+      	omega = 1.15 ! Overrelaxation
       else
-      	omega = 1.
+      	omega = 1.  ! No overrelaxation
       end if
       
       if (charged) then
