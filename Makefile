@@ -6,7 +6,7 @@ FFLAGS = -Wall -O -g -ffixed-line-length-100
 TARGET = relax
 
 # Source files
-SRCS = relax2.f choices.f setup.f jacobi2.f gauss_seidel2.f plot.f
+SRCS = relax.f choices.f setup.f jacobi.f gauss_seidel.f write_charge_density.f
 
 # Object files (generated from source files)
 OBJS = $(SRCS:.f=.o)
@@ -22,9 +22,12 @@ $(TARGET): $(OBJS)
 %.o: %.f
 	$(FC) $(FFLAGS) -c $< -o $@
 
-# Clean up build files
+
+# Clean up build files and generated outputs
 clean:
-	rm -f $(OBJS) $(TARGET)
+	@echo "Cleaning up..."
+	rm -f $(OBJS) $(TARGET) potential_movie.mp4
+	rm -f *.o *.O *.mod *.MOD relax *.dat *.png *.mp4 *.txt *.10
 
 # Phony targets (not actual files)
-.PHONY: all clean
+.PHONY: all movie clean
